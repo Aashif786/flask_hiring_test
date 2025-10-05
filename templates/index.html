@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+        body { font-family: 'Quicksand', sans-serif; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-pink-50 text-gray-800 min-h-screen">
+    <nav class="p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-3xl font-extrabold text-purple-600">
+                <span class="text-pink-400">I</span>nvento
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="text-gray-600 hover:text-purple-500 transition-all duration-300">Dashboard</a>
+                <a href="/products" class="text-gray-600 hover:text-purple-500 transition-all duration-300">Products</a>
+                <a href="/locations" class="text-gray-600 hover:text-purple-500 transition-all duration-300">Locations</a>
+                <a href="/movements" class="text-gray-600 hover:text-purple-500 transition-all duration-300">Movements</a>
+                <a href="/report" class="text-gray-600 hover:text-purple-500 transition-all duration-300">Report</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 text-center">
+            <a href="/" class="block py-2 text-gray-600 hover:bg-purple-100 rounded-lg">Dashboard</a>
+            <a href="/products" class="block py-2 text-gray-600 hover:bg-purple-100 rounded-lg">Products</a>
+            <a href="/locations" class="block py-2 text-gray-600 hover:bg-purple-100 rounded-lg">Locations</a>
+            <a href="/movements" class="block py-2 text-gray-600 hover:bg-purple-100 rounded-lg">Movements</a>
+            <a href="/report" class="block py-2 text-gray-600 hover:bg-purple-100 rounded-lg">Report</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-8 flex-grow">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">Welcome to your Dashboard</h1>
+            <p class="text-lg text-gray-600">Quickly manage your inventory and track movements.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="/products" class="bg-white p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 flex flex-col items-center">
+                <div class="flex items-center justify-center w-16 h-16 bg-pink-200 text-pink-600 rounded-full mb-4">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 10a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-2xl font-semibold mb-2">Manage Products</h3>
+                <p class="text-gray-600 text-center">Add, edit, or view all your products.</p>
+            </a>
+            <a href="/locations" class="bg-white p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 flex flex-col items-center">
+                <div class="flex items-center justify-center w-16 h-16 bg-purple-200 text-purple-600 rounded-full mb-4">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-2xl font-semibold mb-2">Manage Locations</h3>
+                <p class="text-gray-600 text-center">Organize your inventory locations.</p>
+            </a>
+            <a href="/movements" class="bg-white p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 flex flex-col items-center">
+                <div class="flex items-center justify-center w-16 h-16 bg-blue-200 text-blue-600 rounded-full mb-4">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 7a1 1 0 012 0v5a1 1 0 01-2 0V7z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-2xl font-semibold mb-2">Track Movements</h3>
+                <p class="text-gray-600 text-center">Log and view all product movements.</p>
+            </a>
+            <a href="/report" class="bg-white p-6 rounded-2xl shadow-lg card-hover transition-all duration-300 flex flex-col items-center col-span-1 md:col-span-2 lg:col-span-3">
+                <div class="flex items-center justify-center w-16 h-16 bg-green-200 text-green-600 rounded-full mb-4">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 10a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                </div>
+                <h3 class="text-2xl font-semibold mb-2">View Inventory Report</h3>
+                <p class="text-gray-600 text-center">See the current balance of all products.</p>
+            </a>
+        </div>
+    </main>
+    
+    <footer class="py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Invento. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>
